@@ -18,9 +18,8 @@ export default class extends React.Component {
                        titleStyle={navTitleStyle}
                        backButtonTintColor={color.black}>
                     <Scene key="Home" component={Home} title="Headlines" initial/>
-                    {/* <View><Text>The Power Of Truth</Text></View> */}
-                    <Scene key="Article" component={Article} title=""/>
-                    <Scene key="Source" component={Source} title=""/>
+                    <Scene key="Article" component={Article} title="Article"/>
+                    {/* <Scene key="Source" component={Source} title="Source"/> */}
                 </Stack>
             </Router>
         )

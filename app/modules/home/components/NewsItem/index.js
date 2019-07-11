@@ -26,7 +26,9 @@ const NewsItem = ({article}) => {
 
                     <View style={[styles.bottom]}>
                         <Text style={[styles.source]} onPress={() => Actions.Source({source, title: source.name})}>
-                            {source.name}
+                            {source.name}{"\n"}
+                            {"\n"}
+                            Political Bias:
                         </Text>
                         <Text style={[styles.date]}>
                             {moment(publishedAt).fromNow()}

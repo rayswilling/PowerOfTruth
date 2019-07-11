@@ -23,8 +23,6 @@ export function getNewsHeadlines(country = "uk") {
     };
 }
 
-
-
 export function getHeadlinesBySource(source) {
     return (dispatch) => {
         dispatch({type: t.RETRIEVING_HEADLINES});
