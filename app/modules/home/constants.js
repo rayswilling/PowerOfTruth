@@ -1,4 +1,4 @@
-// import  '../../.env';
+import { GOOGLE_API_KEY } from 'react-native-dotenv'
 
 export const NAME = 'home';
 
@@ -7,5 +7,5 @@ export const HEADLINES_AVAILABLE = 'home/HEADLINES_AVAILABLE';
 export const HEADLINES_ERROR = 'home/HEADLINES_ERROR';
 
 export const API_URL = 'https://newsapi.org/v2/top-headlines?';
-export const GOOGLE_API_KEY = ["cf4ccfc3a354423db8ffd79e7a7d0583"];
+export const API_KEY = GOOGLE_API_KEY;
 

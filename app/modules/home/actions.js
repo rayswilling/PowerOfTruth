@@ -7,7 +7,7 @@ export function getNewsHeadlines(country = "uk") {
         
         dispatch({type: t.RETRIEVING_HEADLINES});
         return new Promise((resolve, reject) => {
-            const url = `${t.API_URL}country=${country}&apiKey=${t.API_KEY}&pageSize=5`;
+            const url = `${t.API_URL}country=us&apiKey=${t.API_KEY}&pageSize=10`;
             
             axios.get(url)
                 .then(res => res.data)
@@ -23,13 +23,13 @@ export function getNewsHeadlines(country = "uk") {
     };
 }
 
-getNewsHeadlines();git 
+
 
 export function getHeadlinesBySource(source) {
     return (dispatch) => {
         dispatch({type: t.RETRIEVING_HEADLINES});
         return new Promise((resolve, reject) => {
-            const url = `${t.API_URL}sources=${source}&apiKey=${t.API_KEY}&pageSize=20`;
+            const url = `${t.API_URL}country=us&apiKey=${t.API_KEY}&pageSize=10`;
                 axios.get(url)
                 .then(res => res.data)
                 .then((data) => resolve(data))
