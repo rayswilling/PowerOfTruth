@@ -1,7 +1,375 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App renders a home screen with The Power Of Truth 1`] = `<AppLoading />`;
+exports[`App renders the loading screen 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "flexDirection": "column-reverse",
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#000",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        accessibilityElementsHidden={false}
+        pointerEvents="auto"
+        style={
+          Object {
+            "backgroundColor": "#E9E9EF",
+            "bottom": 0,
+            "left": 0,
+            "opacity": 1,
+            "paddingTop": 64,
+            "position": "absolute",
+            "right": 0,
+            "shadowColor": "black",
+            "shadowOffset": Object {
+              "height": 0,
+              "width": 0,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 5,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <ActivityIndicator
+          animating={true}
+          color="#999999"
+          hidesWhenStopped={true}
+          size="small"
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      pointerEvents="box-none"
+      style={
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          onLayout={[Function]}
+          pointerEvents="box-none"
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderBottomColor": "#A7A7AA",
+              "borderBottomWidth": 0.5,
+              "height": 64,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "paddingTop": 20,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "bottom": 0,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <View
+                pointerEvents="box-none"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "left": 0,
+                    "opacity": 1,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessibilityTraits="header"
+                  accessible={false}
+                  allowFontScaling={true}
+                  numberOfLines={1}
+                  onLayout={[Function]}
+                  style={
+                    Object {
+                      "color": "rgba(0,0,0,.84)",
+                      "fontFamily": undefined,
+                      "fontSize": 23,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.4,
+                      "marginHorizontal": 16,
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Headlines
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
-exports[`App renders the loading screen 1`] = `<AppLoading />`;
-
-exports[`App renders the root without loading screen 1`] = `<AppLoading />`;
+exports[`App renders the root without loading screen 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "flexDirection": "column-reverse",
+          "overflow": "hidden",
+        },
+        Object {
+          "backgroundColor": "#000",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        accessibilityElementsHidden={false}
+        pointerEvents="auto"
+        style={
+          Object {
+            "backgroundColor": "#E9E9EF",
+            "bottom": 0,
+            "left": 0,
+            "opacity": 1,
+            "paddingTop": 64,
+            "position": "absolute",
+            "right": 0,
+            "shadowColor": "black",
+            "shadowOffset": Object {
+              "height": 0,
+              "width": 0,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 5,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+      >
+        <ActivityIndicator
+          animating={true}
+          color="#999999"
+          hidesWhenStopped={true}
+          size="small"
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      pointerEvents="box-none"
+      style={
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          onLayout={[Function]}
+          pointerEvents="box-none"
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderBottomColor": "#A7A7AA",
+              "borderBottomWidth": 0.5,
+              "height": 64,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "paddingTop": 20,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "bottom": 0,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <View
+                pointerEvents="box-none"
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "left": 0,
+                    "opacity": 1,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <Text
+                  accessibilityTraits="header"
+                  accessible={false}
+                  allowFontScaling={true}
+                  numberOfLines={1}
+                  onLayout={[Function]}
+                  style={
+                    Object {
+                      "color": "rgba(0,0,0,.84)",
+                      "fontFamily": undefined,
+                      "fontSize": 23,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.4,
+                      "marginHorizontal": 16,
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Headlines
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
