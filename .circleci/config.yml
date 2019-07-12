@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+
+    steps:
+      - checkout
+
+      - run: npm install
+
+      - run:
+          name: Print the Current Time
+          command: date
+
+      - run:
+          name: Run tests
+          command: npm test
