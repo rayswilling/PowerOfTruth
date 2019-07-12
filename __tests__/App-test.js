@@ -28,9 +28,6 @@ describe('App', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders a home screen with The Power Of Truth', () => {
-    const tree = renderer.create(<App />).toJSON();
-    expect(tree).toEqual("The power of truth")
-  });
+
 
 });
