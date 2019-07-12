@@ -14,3 +14,5 @@ A mobile app that brings together different news sources from across the politic
 
 
 by the foxy-news team
+
+Co-authored-by: lbarber729 <lbarber729@hotmail.co.uk>
