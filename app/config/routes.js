@@ -14,12 +14,12 @@ export default class extends React.Component {
         return (
             <Router>
                 <Stack key="root"
-                       navigationBarStyle={{backgroundColor: "#fff"}}
+                       navigationBarStyle={{backgroundColor: "#eaeaea"}}
                        titleStyle={navTitleStyle}
                        backButtonTintColor={color.black}>
                     <Scene key="Home" component={Home} title="Headlines" initial/>
                     <Scene key="Article" component={Article} title="Article"/>
-                    {/* <Scene key="Source" component={Source} title="Source"/> */}
+                    <Scene key="Source" component={Source} title="Source"/>
                 </Stack>
             </Router>
         )
