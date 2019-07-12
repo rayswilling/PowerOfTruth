@@ -8,8 +8,8 @@ jobs:
       - checkout
 
       - run:
-          name: Install npm
-          command: brew install node
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
 
       - run: npm install
 
