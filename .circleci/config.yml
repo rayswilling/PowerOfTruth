@@ -7,9 +7,9 @@ jobs:
     steps:
       - checkout
 
-    - run:
-        name: Install npm
-        command: brew install node
+      - run:
+          name: Install npm
+          command: brew install node
 
       - run: npm install
 
