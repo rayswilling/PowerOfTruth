@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         flex:1,
         marginTop:padding * 2,
+        lineHeight: 20,
     },
 
     source:{
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
         fontSize: fontSize.small,
         fontFamily: fontFamily.bold,
         color: color.grey,
-        marginLeft: padding
+        marginLeft: 'auto'
     },
 });
 

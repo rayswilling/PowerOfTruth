@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 
+import SQLite from "react-native-sqlite-storage";
 import Router from './app/config/routes'
 import store from './app/redux/store';
 import Home from './app/modules/home/scenes/Home/index.js'
@@ -24,6 +25,18 @@ export default class App extends Component {
         );
     }
 }
+
+// public componentDidMount() {
+//   SQLite.DEBUG(true);
+//   SQLite.enablePromise(true);
+
+//   SQLite.openDatabase({
+//       name: "PowerOfTruth",
+//       location: "default"
+//   }).then((db) => {
+//       console.log("Database open!");
+//   });
+// }
 
 
 
