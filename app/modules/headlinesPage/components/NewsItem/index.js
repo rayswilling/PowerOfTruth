@@ -4,7 +4,7 @@ import moment from "moment";
 
 import {Actions} from 'react-native-router-flux'
 
-import { BIAS_HASH } from '../../constants';
+// import { BIAS_HASH } from '../../constants';
 
 import styles from "./styles"
 
@@ -30,7 +30,7 @@ const NewsItem = ({article}) => {
                         <Text style={[styles.source]} onPress={() => Actions.Source({source, title: source.name})}>
                             {source.name}{"\n"}
                             {"\n"}
-                            Political Bias: {BIAS_HASH[source.name]}
+                            Political Bias: {article.politicalBias}
                         </Text>
                         <Text style={[styles.date]}>
                             {moment(publishedAt).fromNow()}
