@@ -3,9 +3,9 @@ import {FlatList, RefreshControl, ActivityIndicator} from 'react-native';
 
 import {connect} from 'react-redux';
 
-import NewsItem from "../../components/NewsItem"
+import NewsItem from "../components/NewsItem"
 
-import {actions as home} from "../../index"
+import {actions as home} from "../index"
 const { getNewsHeadlines } = home;
 
 class Home extends React.Component {
