@@ -8,6 +8,7 @@ import Article from '../modules/headlinesPage/scenes/article.js';
 import Source from '../modules/headlinesPage/scenes/newsSource.js';
 
 import { color, navTitleStyle } from "../styles/theme";
+// import { createStackNavigator } from 'react-navigation'
 
 export default class extends React.Component {
     render() {
@@ -26,11 +27,32 @@ export default class extends React.Component {
     }
 }
 
+// const Router = createStackNavigator({
+//     Home: { screen: Home },
+//     Article: { screen: Article },
+//     Source: { screen: Source },
+// },
+// {
+//     initialRouteName: Home,
+// });
+
+// export default Router
+
+//   class HeadlinesPage extends Component {
+//     render () {
+//       return (
+//         <Provider store={store}>
+//           <Router />
+//       </Provider>
+//       );
+//     }
+// }
+
 
 // const Router = StackNavigator({
 //     Home: { screen: Home },
-//     Article: { screen: Article }, 
+//     Article: { screen: Article },
 //     Source: { screen: Source }
-//     }, 
+//     },
 //     {initialRouteName: sd
 //     });
