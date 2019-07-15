@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Text, View, Stylesheet } from 'react-native';
 
-class WelcomePage extends Component {
+
+class AboutPage extends Component {
     render () {
       return (
         <View style={styles.container}>
-          <Text style={styles.welcome}>Welcome to the Power of Truth!</Text>
-          <Text onPress={ () => this.props.navigator.push({ id: 'HeadlinesPage' }) }>View today's headlines</Text>
+          <Text style={styles.welcome}>About/info Page!</Text>
       </View>
       );
     }
@@ -31,4 +31,4 @@ class WelcomePage extends Component {
     },
   };
 
-  export default WelcomePage
+  export default AboutPage

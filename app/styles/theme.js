@@ -1,4 +1,4 @@
-import { Dimensions, Platform } from 'react-native';
+import { Dimensions, Platform, Stylesheet } from 'react-native';
 import { moderateScale as normalize } from 'react-native-size-matters';
 
 const color = {
@@ -45,6 +45,25 @@ const tabIconStyle = { size: 21, color: tabColor, selected: selectedTabColor }
 const navTitleStyle = { fontSize: fontSize.regular + 1 , fontFamily: fontFamily.semibold, color: color.black, letterSpacing: 0.4 }
 const navigationBarStyle = { backgroundColor: color.black, borderBottomWidth:0 }
 
+// const styles = Stylesheet.create ({
+//     container: {
+//       flex: 1,
+//       justifyContent: 'center',
+//       alignItems: 'center',
+//       backgroundColor: '#F5FCFF',
+//     },
+//     welcome: {
+//       fontSize: 20,
+//       textAlign: 'center',
+//       margin: 10,
+//     },
+//     instructions: {
+//       textAlign: 'center',
+//       color: '#333333',
+//       marginBottom: 5,
+//     },
+//   });
+  
 export {
     color,
     fontSize,
