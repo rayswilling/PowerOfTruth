@@ -51,8 +51,8 @@ export default class extends React.Component {
 
 // const Router = StackNavigator({
 //     Home: { screen: Home },
-//     Article: { screen: Article }, 
+//     Article: { screen: Article },
 //     Source: { screen: Source }
-//     }, 
+//     },
 //     {initialRouteName: sd
 //     });

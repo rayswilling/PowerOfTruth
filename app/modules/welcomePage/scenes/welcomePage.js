@@ -6,11 +6,11 @@ class WelcomePage extends Component {
       return (
         <View style={styles.container}>
           <Text style={styles.welcome}>Welcome to the Power of Truth!</Text>
-          <Text onPress={ () => this.props.navigator.push({ id: 'HeadlinesPage' }) }>View today's headlines</Text>
       </View>
       );
     }
   }
+
 
   const styles = {
     container: {
