@@ -42,7 +42,7 @@ const tabColor = (Platform.OS === "ios") ? "#fff" : "#fff";
 const selectedTabColor = (Platform.OS === "ios") ? color.main : color.main;
 
 const tabIconStyle = { size: 21, color: tabColor, selected: selectedTabColor }
-const navTitleStyle = { fontSize: fontSize.regular + 1 , fontFamily: fontFamily.semibold, color: color.black, letterSpacing: 0.4 }
+const navTitleStyle = { fontSize: fontSize.regular + 6 , fontFamily: fontFamily.semibold, color: color.black, letterSpacing: 0.4 }
 const navigationBarStyle = { backgroundColor: color.black, borderBottomWidth:0 }
 
 // const styles = Stylesheet.create ({

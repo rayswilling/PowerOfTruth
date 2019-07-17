@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         marginVertical: 5,
-        marginHorizontal: 10
+        marginHorizontal: 20
     },
 
     wrapper:{
@@ -20,6 +20,13 @@ const styles = StyleSheet.create({
         width: 75,
         backgroundColor: color.light_grey,
         marginRight: padding * 1.5
+    },
+
+    BiasBarimg:{
+        height: 30,
+        width: 230,
+        backgroundColor: color.light_grey,
+        marginRight: 'auto'
     },
 
     info:{

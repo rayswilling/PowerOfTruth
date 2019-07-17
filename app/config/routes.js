@@ -6,6 +6,7 @@ import { Scene, Router, Stack } from 'react-native-router-flux';
 import Home from '../modules/headlinesPage/scenes/headlines.js';
 import Article from '../modules/headlinesPage/scenes/article.js';
 import Source from '../modules/headlinesPage/scenes/newsSource.js';
+import Bias from '../modules/headlinesPage/scenes/politicalBias.js';
 
 import { color, navTitleStyle } from "../styles/theme";
 // import { createStackNavigator } from 'react-navigation'
@@ -21,6 +22,7 @@ export default class extends React.Component {
                     <Scene key="Home" component={Home} title="Headlines" initial/>
                     <Scene key="Article" component={Article} title="Article"/>
                     <Scene key="Source" component={Source} title="Source"/>
+                    <Scene key="Bias" component={Bias} title="Bias"/>
                 </Stack>
             </Router>
         )

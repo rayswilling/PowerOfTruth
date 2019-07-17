@@ -29,7 +29,7 @@ export function getHeadlinesBySource(source) {
         dispatch({type: t.RETRIEVING_HEADLINES});
         return new Promise((resolve, reject) => {
 
-            const url = `${t.API_URL}sources=bbc-news&apiKey=${t.API_KEY}&pageSize=10`;
+            const url = `https://power-of-truth-server.herokuapp.com/headlines/source/${source}`;
 
                 axios.get(url)
                 .then(res => res.data)
@@ -38,3 +38,19 @@ export function getHeadlinesBySource(source) {
         })
     };
 }
+
+export function getHeadlinesByBiasGroup(source) {
+    return (dispatch) => {
+        dispatch({type: t.RETRIEVING_HEADLINES});
+        return new Promise((resolve, reject) => {
+
+            const url = `https://power-of-truth-server.herokuapp.com/headlines/bias/${source}`;
+
+                axios.get(url)
+                .then(res => res.data)
+                .then((data) => resolve(data))
+                .catch(error => reject(error));
+        })
+    };
+}
+
