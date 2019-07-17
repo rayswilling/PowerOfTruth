@@ -31,6 +31,7 @@
     "react-native-elements": "^1.1.0",
     "react-native-gesture-handler": "^1.3.0",
     "react-native-router-flux": "^4.0.6",
+    "react-native-search-header": "^0.3.4",
     "react-native-size-matters": "^0.2.1",
     "react-native-sqlite-storage": "^3.3.10",
     "react-native-web": "^0.11.4",

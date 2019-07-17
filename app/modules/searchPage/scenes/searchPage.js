@@ -9,14 +9,18 @@ import {
     StatusBar
 } from 'react-native';
 import SearchHeader from 'react-native-search-header';
+import {Actions} from 'react-native-router-flux'
 
 const DEVICE_WIDTH = Dimensions.get(`window`).width;
 
 
 
-export default class SearchPage extends Component {
+export default class SearchPage extends React.Component {
     constructor (props) {
         super(props);
+        this.state = {
+          topic: '',
+        };
     }
     render () {
         return (
@@ -50,8 +54,17 @@ export default class SearchPage extends Component {
                             return [];
                         }
                     }}
-                />
+                    onEnteringSearch={topic => this.setState({ topic })}
+                    onSearch={() =>
+                      this.props.navigation.navigate('Topic', {
+                      JSON_ListView_Clicked_Item: this.state.topic.nativeEvent.text,
+                    })}
 
+                />
+                <Button
+                    title='Topic'
+                    onPress={() => this.props.navigation.navigate('Topic')}
+                />
 
             </View>
         );
@@ -91,5 +104,3 @@ const styles = StyleSheet.create({
         backgroundColor: `#ff5722`
     }
 });
-
-AppRegistry.registerComponent('Demo', () => Demo);

@@ -2,16 +2,21 @@ import React from 'react';
 import { AppLoading } from 'expo';
 
 import { Scene, Router, Stack } from 'react-native-router-flux';
+import { createStackNavigator } from 'react-navigation';
 
 import Home from '../modules/headlinesPage/scenes/headlines.js';
 import Article from '../modules/headlinesPage/scenes/article.js';
 import Source from '../modules/headlinesPage/scenes/newsSource.js';
+
+import SearchPage from '../modules/searchPage/scenes/searchPage.js';
+import TopicPage from '../modules/searchPage/scenes/topicPage.js';
 
 import { color, navTitleStyle } from "../styles/theme";
 // import { createStackNavigator } from 'react-navigation'
 
 export default class extends React.Component {
     render() {
+
         return (
             <Router>
                 <Stack key="root"

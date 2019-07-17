@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import store from './app/redux/store';
 import SearchPage from './app/modules/searchPage/scenes/searchPage.js';
+import TopicPage from './app/modules/searchPage/scenes/topicPage.js';
 import AboutPage from './app/modules/aboutPage/scenes/aboutPage.js';
 import Router from './app/config/routes.js';
 
@@ -25,13 +26,16 @@ import { createAppContainer, createBottomTabNavigator, createStackNavigator } fr
     }
 }
 
-
+const Search = createStackNavigator({
+  Search: {screen: SearchPage},
+  Topic: {screen: TopicPage},
+})
 
 const AppNav = new createAppContainer(
   createBottomTabNavigator(
     {
       Headlines: { screen: HeadlinesPage },
-      Search: { screen: SearchPage},
+      Search: { screen: Search},
       About: { screen: AboutPage},
     }
   )
