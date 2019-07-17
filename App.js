@@ -27,36 +27,9 @@ import { createAppContainer, createBottomTabNavigator, createStackNavigator } fr
 const AppNav = new createAppContainer(
   createBottomTabNavigator(
     {
-      Headlines: { screen: HeadlinesPage,
-        navigationOptions:{
-          tabBarLabel:'Headlines',
-          activeTintColor: '#f60c0d',
-          inactiveColor: '#ddd', 
-          style: {
-          barStyle: {backgroundColor: '#4d535e'},
-        }
-      },
-    },
-      Search: { screen: SearchPage,
-        navigationOptions:{
-          tabBarLabel:'Home',
-          activeTintColor: '#f60c0d',
-          inactiveColor: '#ddd', 
-          style: {
-          barStyle: {backgroundColor: '#4d535e'},
-        }
-      },
-    },
-      About: { screen: AboutPage,
-        navigationOptions:{
-          tabBarLabel:'About',
-          activeTintColor: '#f60c0d',
-          inactiveColor: '#ddd', 
-          style: {
-          barStyle: {backgroundColor: '#f69b31'},
-        }
-      },
-    },
+      Headlines: { screen: HeadlinesPage},
+      Search: { screen: SearchPage},
+      About: { screen: AboutPage }
     }));
 
 export default AppNav

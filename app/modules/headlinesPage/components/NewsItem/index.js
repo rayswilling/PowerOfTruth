@@ -30,7 +30,7 @@ const NewsItem = ({article}) => {
                         <Text style={[styles.source]} onPress={() => Actions.Source({source, title: source.name})}>
                             {source.name}{"\n"}
                             {"\n"}
-                            <Text style={[article.politicalBias]} onPress={() => Actions.Bias({article, politicalBias: article.politicalBias})}> 
+                            <Text style={[article.politicalBias]} onPress={() => Actions.Bias({article, title: article.politicalBias})}> 
                             Political Bias: {article.politicalBias}  
                             {"\n"}
                             {source.name == "Daily Mail"? <Image style={[styles.BiasBarimg]} source={require('/Users/student/Projects/week11/ThePowerofTruth2/PowerOfTruth/assets/images/spectrums/DailyMail.png')} /> :null}
