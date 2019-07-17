@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import store from './app/redux/store';
-import WelcomePage from './app/modules/welcomePage/scenes/welcomePage.js';
+import SearchPage from './app/modules/searchPage/scenes/searchPage.js';
 import AboutPage from './app/modules/aboutPage/scenes/aboutPage.js';
 import Router from './app/config/routes.js';
 
