@@ -15,7 +15,6 @@ import CustomComponents from 'react-native-deprecated-custom-components';
 
 import { createAppContainer, createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 
-
   class HeadlinesPage extends Component {
     render () {
       return (

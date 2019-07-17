@@ -7,6 +7,7 @@ import { createStackNavigator } from 'react-navigation';
 import Home from '../modules/headlinesPage/scenes/headlines.js';
 import Article from '../modules/headlinesPage/scenes/article.js';
 import Source from '../modules/headlinesPage/scenes/newsSource.js';
+import Bias from '../modules/headlinesPage/scenes/politicalBias.js';
 
 import SearchPage from '../modules/searchPage/scenes/searchPage.js';
 import TopicPage from '../modules/searchPage/scenes/topicPage.js';
@@ -26,6 +27,7 @@ export default class extends React.Component {
                     <Scene key="Home" component={Home} title="Headlines" initial/>
                     <Scene key="Article" component={Article} title="Article"/>
                     <Scene key="Source" component={Source} title="Source"/>
+                    <Scene key="Bias" component={Bias} title="Bias"/>
                 </Stack>
             </Router>
         )
