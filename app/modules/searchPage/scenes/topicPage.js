@@ -1,37 +1,66 @@
-import React, { Component } from 'react';
-import { Text, View, Stylesheet } from 'react-native';
+import React from 'react';
+import {FlatList, RefreshControl, ActivityIndicator} from 'react-native';
 
-class TopicPage extends Component {
-    render () {
-      return (
-        <View style={styles.container}>
-          <Text style={styles.welcome}>Topic Page</Text>
-          <Text>
-          {this.props.navigation.state.params.JSON_ListView_Clicked_Item}
-        </Text>
-      </View>
-      );
+
+import NewsItem from "../../headlinesPage/components/NewsItem/index"
+
+import {actions as home} from "../../headlinesPage/index.js"
+const { getHeadlinesByBiasGroup } = home;
+
+class Topic extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            refreshing: false,
+            isFetching: true,
+            articles:[],
+            hasError:false,
+            errorMsg: ""
+        }
     }
-  }
 
+    componentDidMount() {
+        this.getHeadlinesByTopic(false, true)
+    }
 
-  const styles = {
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10,
-    },
-    instructions: {
-      textAlign: 'center',
-      color: '#333333',
-      marginBottom: 5,
-    },
-  };
+    getHeadlinesByTopic = (refreshing = true, isFetching=false) => {
+        let article = this.props.article;
 
-  export default TopicPage
+        this.setState({refreshing, isFetching});
+        this.props.getHeadlinesByTopic()
+            .then(({articles}) => this.setState({articles}))
+            .catch((error) => alert(error.message))
+            .finally(() => this.setState({refreshing: false, isFetching:false}));
+    }
+
+    renderItem = ({item, index}) => {
+        return <NewsItem article={item}/>
+    }
+
+    render() {
+        const {articles, isFetching, hasError,errorMsg} = this.state;
+
+        if (isFetching) return <ActivityIndicator/>
+        else {
+            return (
+                <FlatList
+                    style={{backgroundColor:'#eaeaea'}}
+                    contentContainerStyle={{paddingVertical:5,}}
+                    ref='listRef'
+                    data={articles}
+                    extraData={this.state}
+                    renderItem={this.renderItem}
+                    initialNumToRender={5}
+                    keyExtractor={(item, index) => index.toString()+"_source"}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={this.state.refreshing}
+                            onRefresh={this.getHeadlinesByTopic}
+                        />
+                    }/>
+            );
+        }
+    }
+}
+
+export default Topic;

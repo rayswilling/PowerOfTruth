@@ -62,8 +62,10 @@ export default class SearchPage extends React.Component {
 
                 />
                 <Button
-                    title='Topic'
-                    onPress={() => this.props.navigation.navigate('Topic')}
+                    title='Trump'
+                    onPress={() => this.props.navigation.navigate('Topic', {
+                    JSON_ListView_Clicked_Item: 'Trump',
+                  })}
                 />
 
             </View>
