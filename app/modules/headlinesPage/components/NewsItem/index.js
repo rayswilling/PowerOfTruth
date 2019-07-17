@@ -4,12 +4,12 @@ import moment from "moment";
 
 import {Actions} from 'react-native-router-flux'
 
-// import { BIAS_HASH } from '../../constants';
-
 import styles from "./styles"
+
 
 const NewsItem = ({article}) => {
     const {title, url, source, publishedAt} = article;
+    
     return (
         <TouchableHighlight
             style={styles.container}
@@ -30,7 +30,17 @@ const NewsItem = ({article}) => {
                         <Text style={[styles.source]} onPress={() => Actions.Source({source, title: source.name})}>
                             {source.name}{"\n"}
                             {"\n"}
-                            Political Bias: {article.politicalBias}
+                            <Text style={[article.politicalBias]} onPress={() => Actions.Bias({article, politicalBias: article.politicalBias})}> 
+                            Political Bias: {article.politicalBias}  
+                            {"\n"}
+                            {source.name == "Daily Mail"? <Image style={[styles.BiasBarimg]} source={require('/Users/student/Projects/week11/ThePowerofTruth2/PowerOfTruth/assets/images/spectrums/DailyMail.png')} /> :null}
+                            {source.name == "BBC News"? <Image style={[styles.BiasBarimg]} source={require('/Users/student/Projects/week11/ThePowerofTruth2/PowerOfTruth/assets/images/spectrums/BBC.png')} /> :null}
+                            {source.name == "CNN"? <Image style={[styles.BiasBarimg]} source={require('/Users/student/Projects/week11/ThePowerofTruth2/PowerOfTruth/assets/images/spectrums/CNN.png')} /> :null}
+                            {source.name == "Huffington Post"? <Image style={[styles.BiasBarimg]} source={require('/Users/student/Projects/week11/ThePowerofTruth2/PowerOfTruth/assets/images/spectrums/HuffingtonPost.png')} /> :null}
+                            {source.name == "The Independent"? <Image style={[styles.BiasBarimg]} source={require('/Users/student/Projects/week11/ThePowerofTruth2/PowerOfTruth/assets/images/spectrums/TheIndependent.png')} /> :null}
+                            {source.name == "The Economist"? <Image style={[styles.BiasBarimg]} source={require('/Users/student/Projects/week11/ThePowerofTruth2/PowerOfTruth/assets/images/spectrums/TheEconomist.png')} /> :null}
+                            {source.name == "Al Jazeera"? <Image style={[styles.BiasBarimg]} source={require('/Users/student/Projects/week11/ThePowerofTruth2/PowerOfTruth/assets/images/spectrums/AlJazeera.png')} /> :null}
+                            </Text>
                         </Text>
                         <Text style={[styles.date]}>
                             {moment(publishedAt).fromNow()}

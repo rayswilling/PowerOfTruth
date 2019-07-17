@@ -14,7 +14,6 @@ import CustomComponents from 'react-native-deprecated-custom-components';
 
 import { createAppContainer, createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 
-
   class HeadlinesPage extends Component {
     render () {
       return (
@@ -25,16 +24,39 @@ import { createAppContainer, createBottomTabNavigator, createStackNavigator } fr
     }
 }
 
-
-
 const AppNav = new createAppContainer(
   createBottomTabNavigator(
     {
-      Home: { screen: WelcomePage},
-      Headlines: { screen: HeadlinesPage },
-      About: { screen: AboutPage},
-    }
-  )
-)
+      Headlines: { screen: HeadlinesPage,
+        navigationOptions:{
+          tabBarLabel:'Headlines',
+          activeTintColor: '#f60c0d',
+          inactiveColor: '#ddd', 
+          style: {
+          barStyle: {backgroundColor: '#4d535e'},
+        }
+      },
+    },
+      Home: { screen: WelcomePage,
+        navigationOptions:{
+          tabBarLabel:'Home',
+          activeTintColor: '#f60c0d',
+          inactiveColor: '#ddd', 
+          style: {
+          barStyle: {backgroundColor: '#4d535e'},
+        }
+      },
+    },
+      About: { screen: AboutPage,
+        navigationOptions:{
+          tabBarLabel:'About',
+          activeTintColor: '#f60c0d',
+          inactiveColor: '#ddd', 
+          style: {
+          barStyle: {backgroundColor: '#f69b31'},
+        }
+      },
+    },
+    }));
 
 export default AppNav
