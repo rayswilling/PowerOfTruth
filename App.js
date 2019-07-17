@@ -37,7 +37,7 @@ const AppNav = new createAppContainer(
         }
       },
     },
-      Home: { screen: WelcomePage,
+      Search: { screen: SearchPage,
         navigationOptions:{
           tabBarLabel:'Home',
           activeTintColor: '#f60c0d',
