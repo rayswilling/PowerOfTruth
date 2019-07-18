@@ -99,9 +99,11 @@ So that I can make an educated judgement on the authenticity of an article,
 I would like to know the likelihood of an article being bias
 ```
 
-For this final user story we had planned to use the SummarizeBot API, which uses machine learning to analyse individual articles to provide an estimation on how likely an article is to be biased or trustworthy. 
+For this final user story we had planned to use the SummarizeBot API, which uses machine learning to analyse individual articles to provide an estimation on how likely an article is to be biased or trustworthy.
 
-by the foxy-news team
+---
+
+#### By the foxy-news team
 
 Co-authored-by: lbarber729 <lbarber729@hotmail.co.uk>  
 
