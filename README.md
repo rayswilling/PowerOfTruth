@@ -27,7 +27,7 @@ We use Jest to test our app. To run the full test suite,
 
 ## Documentation
 
-We created a [wiki](https://github.com/rayswilling/PowerOfTruth/wiki) page which has notes from all our stand ups and retros.  
+We created a [wiki](https://github.com/rayswilling/PowerOfTruth/wiki) page which has notes from all our stand ups and retros. We used [trello](https://trello.com/b/RDFMIatH/foxy-news) to assign tasks.   
 
 
 
