@@ -4,12 +4,8 @@ import {FlatList, RefreshControl, ActivityIndicator} from 'react-native';
 
 import NewsItem from "../../headlinesPage/components/NewsItem/index"
 
-import axios from 'axios';
-
-import { actions } from "../../headlinesPage/index.js"
-const { getHeadlinesByTopic } = actions;
-
-// const getHeadlinesByTopic = actions.getHeadlinesByTopic;
+import {actions as home} from "../../headlinesPage/index.js"
+const { getHeadlinesByBiasGroup } = home;
 
 class Topic extends React.Component {
     constructor() {
@@ -19,23 +15,26 @@ class Topic extends React.Component {
             isFetching: true,
             articles:[],
             hasError:false,
-            errorMsg: "No articles available"
+            errorMsg: ""
         }
     }
 
     componentDidMount() {
-      console.log(this.props.navigation.state.params.JSON_ListView_Clicked_Item)
-      axios.get(`https://power-of-truth-server.herokuapp.com/headlines/topic/${this.props.navigation.state.params.JSON_ListView_Clicked_Item}`)
-      .then(response => {
-        this.state.articles = response.data.articles
-        this.state.isFetching = false
-        this.state.refreshing = true
-      })
-      .catch(error => {
-        alert(error.message)
-      })
-      .finally(() => this.setState({refreshing: false, isFetching:false}));
+      console.error('0000000000000000');
+        console.error(home)
+        home.getHeadlinesByTopic(false, true)
+    }
 
+    getHeadlinesByTopic = (refreshing = true, isFetching=false) => {
+        let article = this.props.article;
+
+        this.setState({refreshing, isFetching});
+        console.log('Hello!!!!!!!!!!!!!!')
+        console.log(this.props.getHeadlinesByTopic)
+        // this.props.getHeadlinesByTopic()
+        //     .then(({articles}) => this.setState({articles}))
+        //     .catch((error) => alert(error.message))
+        //     .finally(() => this.setState({refreshing: false, isFetching:false}));
     }
 
     renderItem = ({item, index}) => {
@@ -43,7 +42,7 @@ class Topic extends React.Component {
     }
 
     render() {
-        const {articles, isFetching, hasError, errorMsg} = this.state;
+        const {articles, isFetching, hasError,errorMsg} = this.state;
 
         if (isFetching) return <ActivityIndicator/>
         else {

@@ -11,7 +11,7 @@ const { getHeadlinesByTopic } = actions;
 
 // const getHeadlinesByTopic = actions.getHeadlinesByTopic;
 
-class Topic extends React.Component {
+class SearchResult extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -25,7 +25,7 @@ class Topic extends React.Component {
 
     componentDidMount() {
       console.log(this.props.navigation.state.params.JSON_ListView_Clicked_Item)
-      axios.get(`https://power-of-truth-server.herokuapp.com/headlines/topic/${this.props.navigation.state.params.JSON_ListView_Clicked_Item}`)
+      axios.get(`https://power-of-truth-server.herokuapp.com/search?q=${this.props.navigation.state.params.JSON_ListView_Clicked_Item}`)
       .then(response => {
         this.state.articles = response.data.articles
         this.state.isFetching = false
@@ -68,4 +68,4 @@ class Topic extends React.Component {
     }
 }
 
-export default Topic;
+export default SearchResult;

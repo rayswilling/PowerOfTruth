@@ -5,6 +5,7 @@ import SearchPage from './app/modules/searchPage/scenes/searchPage.js';
 import SearchResult from './app/modules/searchPage/scenes/searchResultPage.js';
 import Topic from './app/modules/searchPage/scenes/topicPage.js';
 import AboutPage from './app/modules/aboutPage/scenes/aboutPage.js';
+import Article from './app/modules/headlinesPage/scenes/article.js'
 import Router from './app/config/routes.js';
 
 import {
@@ -30,6 +31,7 @@ const Search = createStackNavigator({
   Search: {screen: SearchPage},
   Searchresult: {screen: SearchResult},
   Topic: {screen: Topic},
+  Article: {screen: Article},
 })
 
 const AppNav = new createAppContainer(

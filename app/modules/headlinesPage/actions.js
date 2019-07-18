@@ -69,17 +69,12 @@ export function getHeadlinesBySearch(search) {
     };
 }
 
-export function getHeadlinesByTopic() {
-    return (dispatch) => {
-        dispatch({type: t.RETRIEVING_HEADLINES});
-        return new Promise((resolve, reject) => {
-
-            const url = `https://power-of-truth-server.herokuapp.com/headlines/topic/Trump`;
-
-                axios.get(url)
-                .then(res => res.data)
-                .then((data) => resolve(data))
-                .catch(error => reject(error));
-        })
-    };
-}
+// export function getHeadlinesByTopic() {
+//   const url = `https://power-of-truth-server.herokuapp.com/headlines/topic/Trump`;
+// console.log('1')
+//   axios.get(url)
+//   console.log('2')
+//   console.log(axios.get(url).then(res => res.data))
+//
+//
+// }
