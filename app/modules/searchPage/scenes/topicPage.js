@@ -6,9 +6,6 @@ import NewsItem from "../../headlinesPage/components/NewsItem/index"
 
 import axios from 'axios';
 
-import { actions } from "../../headlinesPage/index.js"
-const { getHeadlinesByTopic } = actions;
-
 // const getHeadlinesByTopic = actions.getHeadlinesByTopic;
 
 class Topic extends React.Component {

@@ -9,11 +9,8 @@ import Article from '../modules/headlinesPage/scenes/article.js';
 import Source from '../modules/headlinesPage/scenes/newsSource.js';
 import Bias from '../modules/headlinesPage/scenes/politicalBias.js';
 
-import SearchPage from '../modules/searchPage/scenes/searchPage.js';
-import TopicPage from '../modules/searchPage/scenes/topicPage.js';
-
 import { color, navTitleStyle } from "../styles/theme";
-// import { createStackNavigator } from 'react-navigation'
+
 
 export default class extends React.Component {
     render() {
@@ -33,33 +30,3 @@ export default class extends React.Component {
         )
     }
 }
-
-// const Router = createStackNavigator({
-//     Home: { screen: Home },
-//     Article: { screen: Article },
-//     Source: { screen: Source },
-// },
-// {
-//     initialRouteName: Home,
-// });
-
-// export default Router
-
-//   class HeadlinesPage extends Component {
-//     render () {
-//       return (
-//         <Provider store={store}>
-//           <Router />
-//       </Provider>
-//       );
-//     }
-// }
-
-
-// const Router = StackNavigator({
-//     Home: { screen: Home },
-//     Article: { screen: Article },
-//     Source: { screen: Source }
-//     },
-//     {initialRouteName: sd
-//     });
