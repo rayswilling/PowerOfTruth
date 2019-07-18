@@ -25,6 +25,46 @@ We use Jest to test our app. To run the full test suite,
 
 - To update the snapshot: `npm test -- -u`
 
+## User Stories
+```
+As a user,
+So that I can see varied perspectives of news,
+I would like to see a list of headlines from different sources
+```
+
+```
+As a user,
+So that I can see how bias an article is,
+I would like to see an indicator of the political bias of the news outlet
+```
+
+```
+As a user,
+So that I can see stories about a particular topic,
+I would like to be able to search for relevant stories
+```
+
+```
+As a user,
+So that I can understand how the bias is determined,
+I would like to see an 'about' page containing information on the bias
+```
+
+```
+As a user,
+So that I can see news from a particular source,
+I would like to click on the source and see headlines from that source
+```
+
+```
+As a user,
+So that I can see news from a particular perspective,
+I would like to view news by it's political Bias
+```
+
+```
+As a user,
+So that I can read
 
 by the foxy-news team
 
