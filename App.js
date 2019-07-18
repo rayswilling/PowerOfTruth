@@ -8,7 +8,7 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 
 
 import {
-  StyleSheet, Platform, Dimensions
+  StyleSheet
 } from 'react-native';
 
 import { Provider } from 'react-redux'

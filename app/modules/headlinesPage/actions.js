@@ -1,9 +1,6 @@
 import axios from 'axios';
-import React from 'react';
 
 import * as t from './constants';
-
-import { SearchBar } from 'react-native-elements';
 
 export function getNewsHeadlines(country = "us") {
     return (dispatch) => {
