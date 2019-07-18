@@ -45,6 +45,14 @@ const styles = StyleSheet.create({
         marginTop:padding * 2,
         lineHeight: 20,
     },
+    
+    politicalBiasStyle:{
+        flexDirection: "row",
+        flex:1,
+        marginTop:padding * 4,
+        lineHeight: 10,
+        marginRight: 60,
+    },
 
     source:{
         fontSize: fontSize.small,
