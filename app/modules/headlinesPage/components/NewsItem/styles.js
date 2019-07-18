@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import { theme } from "../../index"
 export const {padding, color, fontSize, fontFamily } = theme;
 
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         height: 30,
         width: 230,
         backgroundColor: color.light_grey,
-        marginRight: 'auto'
+        marginLeft: 10
     },
 
     info:{
@@ -44,6 +44,14 @@ const styles = StyleSheet.create({
         flex:1,
         marginTop:padding * 2,
         lineHeight: 20,
+    },
+
+    politicalBiasStyle:{
+        flexDirection: "row",
+        flex:1,
+        marginTop:padding * 4,
+        lineHeight: 10,
+        marginRight: 60,
     },
 
     source:{

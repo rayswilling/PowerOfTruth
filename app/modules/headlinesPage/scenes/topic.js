@@ -6,25 +6,32 @@ import {connect} from 'react-redux';
 import NewsItem from "../components/NewsItem"
 
 import {actions as home} from "../index"
+const { getHeadlinesByBiasGroup } = home;
 
-const { getNewsHeadlines } = home;
-
-class Home extends React.Component {
+class Bias extends React.Component {
     constructor() {
         super();
         this.state = {
-            refreshing: false
+            refreshing: false,
+            isFetching: true,
+            articles:[],
+            hasError:false,
+            errorMsg: ""
         }
     }
 
     componentDidMount() {
-        this.getNewsHeadlines(false)
+        this.getHeadlinesByTopic(false, true)
     }
 
-    getNewsHeadlines = (refreshing = true) => {
-        this.setState({refreshing});
-        this.props.getNewsHeadlines()
-            .finally(() => this.setState({refreshing: false}));
+    getHeadlinesByTopic = (refreshing = true, isFetching=false) => {
+        let article = this.props.article;
+
+        this.setState({refreshing, isFetching});
+        this.props.getHeadlinesByTopic(article.politicalBias)
+            .then(({articles}) => this.setState({articles}))
+            .catch((error) => alert(error.message))
+            .finally(() => this.setState({refreshing: false, isFetching:false}));
     }
 
     renderItem = ({item, index}) => {
@@ -32,7 +39,7 @@ class Home extends React.Component {
     }
 
     render() {
-        const {articles, isFetching, hasError,errorMsg} = this.props;
+        const {articles, isFetching, hasError,errorMsg} = this.state;
 
         if (isFetching) return <ActivityIndicator/>
         else {
@@ -45,11 +52,11 @@ class Home extends React.Component {
                     extraData={this.state}
                     renderItem={this.renderItem}
                     initialNumToRender={5}
-                    keyExtractor={(item, index) => index.toString()+"_home"}
+                    keyExtractor={(item, index) => index.toString()+"_source"}
                     refreshControl={
                         <RefreshControl
                             refreshing={this.state.refreshing}
-                            onRefresh={this.getNewsHeadlines}
+                            onRefresh={this.getHeadlinesByTopic}
                         />
                     }/>
             );
@@ -57,13 +64,4 @@ class Home extends React.Component {
     }
 }
 
-function mapStateToProps(state, props) {
-    return {
-        isFetching: state.homeReducer.isFetching,
-        hasError: state.homeReducer.hasError,
-        errorMsg: state.homeReducer.errorMsg,
-        articles: state.homeReducer.articles
-    }
-}
-
-export default connect(mapStateToProps, { getNewsHeadlines })(Home);
+export default connect(null, { getHeadlinesByTopic })(Bias);

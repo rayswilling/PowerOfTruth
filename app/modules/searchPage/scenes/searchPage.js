@@ -12,8 +12,6 @@ import SearchHeader from 'react-native-search-header';
 
 const DEVICE_WIDTH = Dimensions.get(`window`).width;
 
-
-
 export default class SearchPage extends Component {
     constructor (props) {
         super(props);
@@ -57,7 +55,6 @@ export default class SearchPage extends Component {
         );
     }
 }
-
 
 const styles = StyleSheet.create({
     container: {

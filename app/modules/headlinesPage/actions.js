@@ -1,6 +1,9 @@
 import axios from 'axios';
+import React from 'react';
 
 import * as t from './constants';
+
+import { SearchBar } from 'react-native-elements';
 
 export function getNewsHeadlines(country = "us") {
     return (dispatch) => {
@@ -54,3 +57,39 @@ export function getHeadlinesByBiasGroup(source) {
     };
 }
 
+export function getHeadlinesByTopic(source) {
+    return (dispatch) => {
+        dispatch({type: t.RETRIEVING_HEADLINES});
+        return new Promise((resolve, reject) => {
+
+            const url = `https://power-of-truth-server.herokuapp.com/headlines/topic/${source}`;
+
+                axios.get(url)
+                .then(res => res.data)
+                .then((data) => resolve(data))
+                .catch(error => reject(error));
+        })
+    };
+}
+
+export class App extends React.Component {
+  state = {
+    search: '',
+  };
+
+  updateSearch = search => {
+    this.setState({ search });
+  };
+
+  render() {
+    const { search } = this.state;
+
+    return (
+      <SearchBar
+        placeholder="Type Here..."
+        onChangeText={this.updateSearch}
+        value={search}
+      />
+    );
+  }
+}
