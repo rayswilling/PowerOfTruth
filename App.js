@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 
 import store from './app/redux/store';
 import SearchPage from './app/modules/searchPage/scenes/searchPage.js';
+import SearchResult from './app/modules/searchPage/scenes/searchResultPage.js';
+import Topic from './app/modules/searchPage/scenes/topicPage.js';
 import AboutPage from './app/modules/aboutPage/scenes/aboutPage.js';
+import Article from './app/modules/headlinesPage/scenes/article.js'
 import Router from './app/config/routes.js';
 
 import {
@@ -24,12 +27,21 @@ import { createAppContainer, createBottomTabNavigator, createStackNavigator } fr
     }
 }
 
+const Search = createStackNavigator({
+  Search: {screen: SearchPage},
+  Searchresult: {screen: SearchResult},
+  Topic: {screen: Topic},
+  Article: {screen: Article},
+})
+
 const AppNav = new createAppContainer(
   createBottomTabNavigator(
     {
-      Headlines: { screen: HeadlinesPage},
-      Search: { screen: SearchPage},
-      About: { screen: AboutPage }
-    }));
+      Headlines: { screen: HeadlinesPage },
+      Search: { screen: Search},
+      About: { screen: AboutPage},
+    }
+  )
+)
 
 export default AppNav

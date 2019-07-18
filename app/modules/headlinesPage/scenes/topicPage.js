@@ -1,14 +1,13 @@
 import React from 'react';
 import {FlatList, RefreshControl, ActivityIndicator} from 'react-native';
 
-import {connect} from 'react-redux';
 
-import NewsItem from "../components/NewsItem"
+import NewsItem from "../../headlinesPage/components/NewsItem/index"
 
-import {actions as home} from "../index"
+import {actions as home} from "../../headlinesPage/index.js"
 const { getHeadlinesByBiasGroup } = home;
 
-class Bias extends React.Component {
+class Topic extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -17,21 +16,25 @@ class Bias extends React.Component {
             articles:[],
             hasError:false,
             errorMsg: ""
-        } 
+        }
     }
 
     componentDidMount() {
-        this.getHeadlinesByBiasGroup(false, true)
+      console.error('0000000000000000');
+        console.error(home)
+        home.getHeadlinesByTopic(false, true)
     }
 
-    getHeadlinesByBiasGroup = (refreshing = true, isFetching=false) => {
+    getHeadlinesByTopic = (refreshing = true, isFetching=false) => {
         let article = this.props.article;
 
         this.setState({refreshing, isFetching});
-        this.props.getHeadlinesByBiasGroup(article.politicalBias)
-            .then(({articles}) => this.setState({articles}))
-            .catch((error) => alert(error.message))
-            .finally(() => this.setState({refreshing: false, isFetching:false}));
+        console.log('Hello!!!!!!!!!!!!!!')
+        console.log(this.props.getHeadlinesByTopic)
+        // this.props.getHeadlinesByTopic()
+        //     .then(({articles}) => this.setState({articles}))
+        //     .catch((error) => alert(error.message))
+        //     .finally(() => this.setState({refreshing: false, isFetching:false}));
     }
 
     renderItem = ({item, index}) => {
@@ -56,7 +59,7 @@ class Bias extends React.Component {
                     refreshControl={
                         <RefreshControl
                             refreshing={this.state.refreshing}
-                            onRefresh={this.getHeadlinesByBiasGroup}
+                            onRefresh={this.getHeadlinesByTopic}
                         />
                     }/>
             );
@@ -64,4 +67,4 @@ class Bias extends React.Component {
     }
 }
 
-export default connect(null, { getHeadlinesByBiasGroup })(Bias);
+export default Topic;

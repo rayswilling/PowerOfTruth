@@ -1,14 +1,17 @@
 import React from 'react';
 import {FlatList, RefreshControl, ActivityIndicator} from 'react-native';
 
-import {connect} from 'react-redux';
 
-import NewsItem from "../components/NewsItem"
+import NewsItem from "../../headlinesPage/components/NewsItem/index"
 
-import {actions as home} from "../index"
-const { getHeadlinesByBiasGroup } = home;
+import axios from 'axios';
 
-class Bias extends React.Component {
+import { actions } from "../../headlinesPage/index.js"
+const { getHeadlinesByTopic } = actions;
+
+// const getHeadlinesByTopic = actions.getHeadlinesByTopic;
+
+class Topic extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -16,22 +19,23 @@ class Bias extends React.Component {
             isFetching: true,
             articles:[],
             hasError:false,
-            errorMsg: ""
-        } 
+            errorMsg: "No articles available"
+        }
     }
 
     componentDidMount() {
-        this.getHeadlinesByBiasGroup(false, true)
-    }
+      console.log(this.props.navigation.state.params.JSON_ListView_Clicked_Item)
+      axios.get(`https://power-of-truth-server.herokuapp.com/headlines/topic/${this.props.navigation.state.params.JSON_ListView_Clicked_Item}`)
+      .then(response => {
+        this.state.articles = response.data.articles
+        this.state.isFetching = false
+        this.state.refreshing = true
+      })
+      .catch(error => {
+        alert(error.message)
+      })
+      .finally(() => this.setState({refreshing: false, isFetching:false}));
 
-    getHeadlinesByBiasGroup = (refreshing = true, isFetching=false) => {
-        let article = this.props.article;
-
-        this.setState({refreshing, isFetching});
-        this.props.getHeadlinesByBiasGroup(article.politicalBias)
-            .then(({articles}) => this.setState({articles}))
-            .catch((error) => alert(error.message))
-            .finally(() => this.setState({refreshing: false, isFetching:false}));
     }
 
     renderItem = ({item, index}) => {
@@ -39,7 +43,7 @@ class Bias extends React.Component {
     }
 
     render() {
-        const {articles, isFetching, hasError,errorMsg} = this.state;
+        const {articles, isFetching, hasError, errorMsg} = this.state;
 
         if (isFetching) return <ActivityIndicator/>
         else {
@@ -56,7 +60,7 @@ class Bias extends React.Component {
                     refreshControl={
                         <RefreshControl
                             refreshing={this.state.refreshing}
-                            onRefresh={this.getHeadlinesByBiasGroup}
+                            onRefresh={this.getHeadlinesByTopic}
                         />
                     }/>
             );
@@ -64,4 +68,4 @@ class Bias extends React.Component {
     }
 }
 
-export default connect(null, { getHeadlinesByBiasGroup })(Bias);
+export default Topic;

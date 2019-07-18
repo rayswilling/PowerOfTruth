@@ -1,14 +1,15 @@
 import React from 'react';
 import {FlatList, RefreshControl, ActivityIndicator} from 'react-native';
 
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 
-import NewsItem from "../components/NewsItem"
+import NewsItem from "../../headlinesPage/components/NewsItem/index"
 
-import {actions as home} from "../index"
-const { getHeadlinesByBiasGroup } = home;
+import {actions as home} from "../../headlinesPage/index.js"
 
-class Bias extends React.Component {
+const { getHeadlinesBySearch } = home;
+
+class SearchResult extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -17,18 +18,18 @@ class Bias extends React.Component {
             articles:[],
             hasError:false,
             errorMsg: ""
-        } 
+        }
     }
 
     componentDidMount() {
-        this.getHeadlinesByBiasGroup(false, true)
+        this.getHeadlinesBySearch(false, true)
     }
 
-    getHeadlinesByBiasGroup = (refreshing = true, isFetching=false) => {
+    getHeadlinesBySearch = (refreshing = true, isFetching=false) => {
         let article = this.props.article;
 
         this.setState({refreshing, isFetching});
-        this.props.getHeadlinesByBiasGroup(article.politicalBias)
+        this.props.getHeadlinesBySearch(this.props.navigation.state.params.JSON_ListView_Clicked_Item)
             .then(({articles}) => this.setState({articles}))
             .catch((error) => alert(error.message))
             .finally(() => this.setState({refreshing: false, isFetching:false}));
@@ -56,7 +57,7 @@ class Bias extends React.Component {
                     refreshControl={
                         <RefreshControl
                             refreshing={this.state.refreshing}
-                            onRefresh={this.getHeadlinesByBiasGroup}
+                            onRefresh={this.getHeadlinesBySearch}
                         />
                     }/>
             );
@@ -64,4 +65,4 @@ class Bias extends React.Component {
     }
 }
 
-export default connect(null, { getHeadlinesByBiasGroup })(Bias);
+export default SearchResult;
