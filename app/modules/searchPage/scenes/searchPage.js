@@ -56,7 +56,7 @@ export default class SearchPage extends React.Component {
                     }}
                     onEnteringSearch={topic => this.setState({ topic })}
                     onSearch={() =>
-                      this.props.navigation.navigate('SearchResult', {
+                      this.props.navigation.navigate('Searchresult', {
                       JSON_ListView_Clicked_Item: this.state.topic.nativeEvent.text,
                     })}
 
