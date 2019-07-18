@@ -1,8 +1,8 @@
 import React from 'react';
-import { createBottomTabNavigator, 
+import { createBottomTabNavigator,
          createStackNavigator,
           } from 'react-navigation';
-         
+
 import WelcomePage from './app/modules/welcomePage/scenes/welcomePage.js';
 import AboutPage from './app/modules/aboutPage/scenes/aboutPage.js';
 
@@ -40,12 +40,12 @@ const AppTabNavigator = new createAppContainer(
       Home: { screen: WelcomePage},
       About: { screen: AboutPage},
    },{
-   
+
      navigationOptions: ({ navigation }) => ({
         //define the icon for each tab here...
        tabBarIcon: ({ focused, tintColor }) => {
       const { routeName } = navigation.state;
-      
+
       let icon;
       switch(routeName) {
          case 'WelcomePage':
@@ -59,9 +59,9 @@ const AppTabNavigator = new createAppContainer(
           break;
         }
 
-        return <Ionicons 
-                 name={icon} 
-                 size={25} 
+        return <Ionicons
+                 name={icon}
+                 size={25}
                  color={tintColor} />;
        },
      }),
