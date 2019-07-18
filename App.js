@@ -7,6 +7,7 @@ import Topic from './app/modules/searchPage/scenes/topicPage.js';
 import AboutPage from './app/modules/aboutPage/scenes/aboutPage.js';
 import Article from './app/modules/headlinesPage/scenes/article.js'
 import Router from './app/config/routes.js';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 import {
   StyleSheet,
@@ -35,13 +36,19 @@ const Search = createStackNavigator({
 })
 
 const AppNav = new createAppContainer(
-  createBottomTabNavigator(
+  createMaterialBottomTabNavigator(
     {
-      Headlines: { screen: HeadlinesPage },
+      Headlines: { screen: HeadlinesPage},
       Search: { screen: Search},
-      About: { screen: AboutPage},
-    }
-  )
-)
+      About: { screen: AboutPage }
+    }, {
+      activeColor: '#f0edf6',
+      inactiveColor: '#3e2465',
+      barStyle: { backgroundColor: '#957E85', paddingBottom: 15 },
+      labeled: true,
+      // navbarHeight,
+      // padding, 
+      // windowHeight
+    }));
 
 export default AppNav
