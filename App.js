@@ -30,7 +30,6 @@ const AppNav = new createAppContainer(
   createMaterialBottomTabNavigator(
     {
       Headlines: { screen: HeadlinesPage},
-
       Search: { screen: SearchPage},
       About: { screen: AboutPage }
     }, {
@@ -45,14 +44,3 @@ const AppNav = new createAppContainer(
 
 export default AppNav
 
-const padding = 8;
-const navbarHeight = (Platform.OS === 'ios') ? 64 : 54;
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
-// const tabColor = (Platform.OS === "ios") ? "#fff" : "#fff";
-// const selectedTabColor = (Platform.OS === "ios") ? color.main : color.main;
-
-// const tabIconStyle = { size: 21, color: tabColor, selected: selectedTabColor }
-// const navTitleStyle = { fontSize: fontSize.regular + 6 , fontFamily: fontFamily.semibold, color: color.black, letterSpacing: 0.4 }
-// const navigationBarStyle = { backgroundColor: color.black, borderBottomWidth:0 }
