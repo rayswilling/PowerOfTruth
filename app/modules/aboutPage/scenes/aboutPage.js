@@ -7,7 +7,8 @@ class AboutPage extends Component {
       return (
         <View style={styles.container}>
           <Text style={styles.welcome}>
-          <Image style={styles.logo}
+          <Image style={image.logo}
+
           source={require('../../../../assets/images/PowerOfTruthLogo.png')} />
 
           {`
@@ -40,12 +41,17 @@ class AboutPage extends Component {
       color: '#333333',
       marginBottom: 5,
     },
+
+  };
+
+  const image = {
     logo: {
       width: 150,
       height: 150,
+      justifyContent: 'center',
+      alignItems: 'center'
     }
-  };
-
+  }
 
 
   export default AboutPage

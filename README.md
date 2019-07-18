@@ -74,13 +74,13 @@ So that I can learn more after seeing a headline,
 I would like to touch the headline and for the full article to open
 ```
 
-## Nice to Haves
 ```
 As a user,
 So that I can see how all sides of the political spectrum are reporting on a topic,
 I would like to be able to click on particular news topics and see a full spectrum of that topic
 ```
 
+## Nice to Haves
 ```
 As a user,
 So that I can share my view,
