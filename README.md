@@ -15,7 +15,7 @@ This app has a backend server which we built and deploy using Heroku. It can be 
 - `brew install yarn`
 - `yarn global add expo-cli`
 - Launch the application: `yarn start`
-- The brower will open. Select `Run on ios simulator`
+- The browser will open. Select `Run on ios simulator`
 
 
 ## Testing
@@ -25,10 +25,22 @@ We use Jest to test our app. To run the full test suite,
 
 - To update the snapshot: `npm test -- -u`
 
+## Documentation
+
+We created a [wiki](https://github.com/rayswilling/PowerOfTruth/wiki) page which has notes from all our stand ups and retros.  
+
+
 
 by the foxy-news team
 
 Co-authored-by: lbarber729 <lbarber729@hotmail.co.uk>  
+
 Co-authored-by: hughbric <mhughes36@live.co.uk>  
+
 Co-authored-by: samkitchen94 <samkitchen94@gmail.com>  
-Co-authored-by: EdinaBMakers <bolkeny.edina@gmail.com>  
+
+Co-authored-by: EdinaBMakers <bolkeny.edina@gmail.com>
+
+Co-authored-by: LisaMcCormack <lisamccormack85@gmail.com>
+
+Co-authored-by: rayswilling <swillingray@gmail.com>

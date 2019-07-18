@@ -17,7 +17,7 @@ class Bias extends React.Component {
             articles:[],
             hasError:false,
             errorMsg: ""
-        }
+        } 
     }
 
     componentDidMount() {
