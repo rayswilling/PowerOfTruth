@@ -1,6 +1,3 @@
-[![CircleCI](https://circleci.com/gh/rayswilling/PowerOfTruth.svg?style=svg)](https://circleci.com/gh/rayswilling/PowerOfTruth)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
 # By the Power of Truth
 
 A mobile app that brings together different news sources from across the political spectrum in order to minimise confirmation bias.
@@ -28,6 +25,12 @@ We use Jest to test our app. To run the full test suite,
 - Run `npm test` from the project root
 
 - To update the snapshot: `npm test -- -u`
+
+## Screenshots
+
+![Headlines](./assets/images/headlines.png)
+
+![About](./assets/images/about-page.png)
 
 ## User Stories
 These were the user stories that were implemented in the timeframe given for this project. These include the user stories for the Minimum Viable Product as well as some of the additional features we managed to fit in. The 'Nice to Have' section below contains the user stories that we would have liked to fit in had we had more time.
