@@ -10,3 +10,4 @@ web-build/
 web-report/
 .env
 package-lock.json
+.DS_Store
